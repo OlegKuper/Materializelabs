@@ -1,0 +1,60 @@
+.section{
+	position: relative;
+	padding: 72px 0;
+	@include media("<tablet"){
+		padding: 35px 0;
+	}
+	&_gray{
+		background-color: $shark;
+	}
+	.container{
+		display: flex;
+		align-items: center;
+		height: 100%;
+	}
+}
+.page{
+	#section1{
+	}
+}
+#footer{
+	padding: 0;
+	.container{
+		display: block;
+	}
+}
+#mapholder{
+	padding: 0;
+}
+.page{
+	#section2{
+		.container{
+			display: flex;
+			align-items: center; 
+		}
+	}
+}
+.page{
+	#section4,
+	#section6{
+		.container{
+			display: flex;
+			align-items: center; 
+			flex-direction: column;
+			justify-content: center;
+		}
+	}
+}
+
+.page{
+	#section8,
+	#section9,
+	#section10{
+		.container{
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: initial;
+		}
+	}
+}

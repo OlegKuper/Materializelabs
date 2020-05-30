@@ -1,0 +1,172 @@
+	<noscript>Detected missing Javascript support. Certain website features will not operate correctly with Javascript disabled.</noscript>
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDDnlAsptzlkXiae_9rg4aSmkqDy8mhTVk"></script>
+	<script src="js/particles.min.js"></script>
+	<script src="js/isInViewport.min.js"></script>
+	<script src="js/stats.min.js"></script>
+	<script src="js/typed.min.js"></script>
+	<script>
+			function mapInitialize(map_) {
+			var latlng = new google.maps.LatLng(34.052428, -118.243687);
+			var myOptions = {
+			center: latlng,
+			zoom: 10,
+			//zoomControl: true,
+			//scaleControl: true,
+			disableDefaultUI: true,
+			//scrollwheel: true,
+			//mapTypeControl: false,
+			//streetViewControl: false,
+			//rotateControl: false,
+			//disableDoubleClickZoom: true,
+			};
+			var map = new google.maps.Map(document.getElementById(map_), myOptions);
+			var stylesBW = [
+			{
+				"featureType": "administrative",
+				"elementType": "all",
+				"stylers": [
+					{
+						"saturation": "-100"
+					}
+				]
+			},
+			{
+				"featureType": "administrative.province",
+				"elementType": "all",
+				"stylers": [
+					{
+						"visibility": "off"
+					}
+				]
+			},
+			{
+				"featureType": "landscape",
+				"elementType": "all",
+				"stylers": [
+					{
+						"saturation": -100
+					},
+					{
+						"lightness": 65
+					},
+					{
+						"visibility": "on"
+					}
+				]
+			},
+			{
+				"featureType": "poi",
+				"elementType": "all",
+				"stylers": [
+					{
+						"saturation": -100
+					},
+					{
+						"lightness": "50"
+					},
+					{
+						"visibility": "simplified"
+					}
+				]
+			},
+			{
+				"featureType": "road",
+				"elementType": "all",
+				"stylers": [
+					{
+						"saturation": "-100"
+					}
+				]
+			},
+			{
+				"featureType": "road.highway",
+				"elementType": "all",
+				"stylers": [
+					{
+						"visibility": "simplified"
+					}
+				]
+			},
+			{
+				"featureType": "road.arterial",
+				"elementType": "all",
+				"stylers": [
+					{
+						"lightness": "30"
+					}
+				]
+			},
+			{
+				"featureType": "road.local",
+				"elementType": "all",
+				"stylers": [
+					{
+						"lightness": "40"
+					}
+				]
+			},
+			{
+				"featureType": "transit",
+				"elementType": "all",
+				"stylers": [
+					{
+						"saturation": -100
+					},
+					{
+						"visibility": "simplified"
+					}
+				]
+			},
+			{
+				"featureType": "water",
+				"elementType": "geometry",
+				"stylers": [
+					{
+						"hue": "#ffff00"
+					},
+					{
+						"lightness": -25
+					},
+					{
+						"saturation": -97
+					}
+				]
+			},
+			{
+				"featureType": "water",
+				"elementType": "labels",
+				"stylers": [
+					{
+						"lightness": -25
+					},
+					{
+						"saturation": -100
+					}
+				]
+			}
+			];
+			map.setOptions({styles: stylesBW});
+			function addMarker(feature) {
+			var marker = new google.maps.Marker({
+				position: feature.position,
+				icon: '../images/ico-marker.svg',
+				map: map
+			});
+			}
+			var features = [
+			{
+				position: new google.maps.LatLng(34.019455, -118.491194)
+			},
+			];
+
+			for (var i = 0, feature; feature = features[i]; i++) {
+			addMarker(feature);
+			}
+		}
+		$('#map').each(function(){
+			var map_ = $(this).attr('id');
+			mapInitialize(map_);
+		});
+	</script>
+	<script src="js/main.js"></script>
